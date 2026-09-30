@@ -1,4 +1,4 @@
-//git commit -m "2026-08-22: added project comment"
+
 <?php
 $conn = new mysqli("localhost", "root", "", "notice_board_db");
 
@@ -59,3 +59,7 @@ $result = $conn->query($sql);
     </div>
 </body>
 </html>
+</html>
+
+<!-- Updated on September 30, 2026 -->
+ 
