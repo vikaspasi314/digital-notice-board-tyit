@@ -1,10 +1,10 @@
-
 <?php
 $conn = new mysqli("localhost", "root", "", "notice_board_db");
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
+
 $sql = "SELECT * FROM notices ORDER BY posted_date DESC";
 $result = $conn->query($sql);
 ?>
@@ -25,7 +25,7 @@ $result = $conn->query($sql);
             padding: 20px;
             text-align: center;
         }
-                .notice-container {
+        .notice-container {
             max-width: 800px;
             margin: 30px auto;
             padding: 0 20px;
@@ -48,18 +48,23 @@ $result = $conn->query($sql);
     <header>
         <h1>Digital Notice Board</h1>
     </header>
-            <div class="notice-container">
-        <?php while ($row = $result->fetch_assoc()) { ?>
-            <div class="notice-card">
-                <h2><?php echo $row['title']; ?></h2>
-                <p class="date">Posted on: <?php echo $row['posted_date']; ?> | <?php echo $row['category']; ?></p>
-                <p><?php echo $row['description']; ?></p>
-            </div>
+
+    <div class="notice-container">
+        <?php if ($result->num_rows > 0) { ?>
+            <?php while ($row = $result->fetch_assoc()) { ?>
+                <div class="notice-card">
+                    <h2><?php echo $row['title']; ?></h2>
+                    <p class="date">Posted on: <?php echo $row['posted_date']; ?> | <?php echo $row['category']; ?></p>
+                    <p><?php echo $row['description']; ?></p>
+                </div>
+            <?php } ?>
+        <?php } else { ?>
+            <p>No notices available right now. Please check back later.</p>
         <?php } ?>
     </div>
+
+    <footer style="text-align: center; padding: 15px; color: gray; font-size: 13px;">
+        &copy; 2026 Digital Notice Board | TYIT Project
+    </footer>
 </body>
 </html>
-</html>
-
-<!-- Updated on September 30, 2026 -->
- 
