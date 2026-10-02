@@ -45,9 +45,11 @@ $result = $conn->query($sql);
     </style>
 </head>
 <body>
-    <header>
+        <header>
         <h1>Digital Notice Board</h1>
+        <p style="font-size: 13px; opacity: 0.8;">TYIT Subject Project</p>
     </header>
+    
 
     <div class="notice-container">
         <?php if ($result->num_rows > 0) { ?>
