@@ -65,7 +65,7 @@ $result = $conn->query($sql);
         <?php } ?>
     </div>
 
-    <footer style="text-align: center; padding: 15px; color: gray; font-size: 13px;">
+        <footer style="text-align: center; padding: 15px; color: gray; font-size: 13px;">
         &copy; 2026 Digital Notice Board | TYIT Project
     </footer>
 </body>
