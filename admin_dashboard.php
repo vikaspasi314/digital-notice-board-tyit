@@ -53,9 +53,10 @@ if ($conn->connect_error) {
     </style>
 </head>
 <body>
-    <header>
+        <header>
         <h1>Admin Dashboard</h1>
         <p>Add a New Notice</p>
+        <a href="logout.php" style="color: white; font-size: 13px;">Logout</a>
     </header>
 
     <div class="form-container">
